@@ -2,395 +2,534 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>فنيون متخصصون في صيانة وتركيب غرف النوم</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=El+Messiri:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#EFE7D8;
-    --bg-panel:#FBF7EE;
-    --ink:#2E2620;
-    --ink-soft:#5A4C3E;
-    --wood:#9C6B3E;
-    --wood-deep:#6E4A2E;
-    --wood-light:#C99A66;
-    --plum:#39303E;
-    --plum-soft:#4C4152;
-    --line:rgba(46,38,32,0.14);
-    --cream-on-plum:#EFE7D8;
+  :root {
+    --bg: #EFE7D8;
+    --bg-panel: #FBF7EE;
+    --ink: #2E2620;
+    --ink-soft: #5A4C3E;
+    --wood: #9C6B3E;
+    --wood-deep: #6E4A2E;
+    --wood-light: #C99A66;
+    --plum: #39303E;
+    --plum-soft: #4C4152;
+    --line: rgba(46,38,32,0.14);
+    --cream-on-plum: #EFE7D8;
   }
-  :root:not([data-theme="light"]) {
-    @media (prefers-color-scheme: dark){
-      --bg:#221C17;
-      --bg-panel:#2B241D;
-      --ink:#F1E9DA;
-      --ink-soft:#CBBBA4;
-      --wood:#C99A66;
-      --wood-deep:#E3B784;
-      --wood-light:#8A5D34;
-      --plum:#1D1720;
-      --plum-soft:#2C2432;
-      --line:rgba(241,233,218,0.14);
-      --cream-on-plum:#F1E9DA;
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #221C17;
+      --bg-panel: #2B241D;
+      --ink: #F1E9DA;
+      --ink-soft: #CBBBA4;
+      --wood: #C99A66;
+      --wood-deep: #E3B784;
+      --wood-light: #8A5D34;
+      --plum: #1D1720;
+      --plum-soft: #2C2432;
+      --line: rgba(241,233,218,0.14);
+      --cream-on-plum: #F1E9DA;
     }
   }
-  :root[data-theme="dark"]{
-    --bg:#221C17;
-    --bg-panel:#2B241D;
-    --ink:#F1E9DA;
-    --ink-soft:#CBBBA4;
-    --wood:#C99A66;
-    --wood-deep:#E3B784;
-    --wood-light:#8A5D34;
-    --plum:#1D1720;
-    --plum-soft:#2C2432;
-    --line:rgba(241,233,218,0.14);
-    --cream-on-plum:#F1E9DA;
+
+  :root[data-theme="dark"] {
+    --bg: #221C17;
+    --bg-panel: #2B241D;
+    --ink: #F1E9DA;
+    --ink-soft: #CBBBA4;
+    --wood: #C99A66;
+    --wood-deep: #E3B784;
+    --wood-light: #8A5D34;
+    --plum: #1D1720;
+    --plum-soft: #2C2432;
+    --line: rgba(241,233,218,0.14);
+    --cream-on-plum: #F1E9DA;
   }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Almarai', system-ui, sans-serif;
-    line-height:1.8;
-    overflow-x:hidden;
-  }
-  img,svg{max-width:100%;}
-  h1,h2,h3{
-    font-family:'El Messiri', 'Almarai', serif;
-    margin:0;
-    color:var(--ink);
-    font-weight:700;
-  }
-  a{color:inherit; text-decoration:none;}
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-  .section{ padding:88px 0; }
-  @media (max-width:720px){ .section{ padding:56px 0; } }
-
-  /* top contact bar */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background:var(--plum);
-    color:var(--cream-on-plum);
-    font-size:14px;
-  }
-  .topbar .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:12px; padding-top:10px; padding-bottom:10px;
-    flex-wrap:wrap;
-  }
-  .topbar .brand{ font-family:'El Messiri',serif; font-weight:600; font-size:16px; letter-spacing:.2px;}
-  .topbar .contacts{ display:flex; gap:18px; flex-wrap:wrap; }
-  .topbar a.contact-link{ display:flex; align-items:center; gap:8px; opacity:.92; }
-  .topbar a.contact-link:hover{ opacity:1; }
-  .topbar svg{ width:16px; height:16px; flex-shrink:0; }
-
-  /* hero */
-  .hero{
-    position:relative;
-    padding:72px 0 40px;
-    overflow:hidden;
-  }
-  .hero .wrap{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:56px;
-    align-items:center;
-  }
-  @media (max-width:900px){
-    .hero .wrap{ grid-template-columns:1fr; }
-    .hero{ padding-top:48px; }
-  }
-  .eyebrow-wordgrain{
-    width:64px; height:6px; border-radius:3px;
-    background:linear-gradient(90deg,var(--wood),var(--wood-light));
-    margin-bottom:22px;
-  }
-  .hero h1{
-    font-size:clamp(34px,5vw,54px);
-    line-height:1.25;
-    max-width:14ch;
-  }
-  .hero p.lead{
-    margin-top:22px;
-    font-size:17px;
-    color:var(--ink-soft);
-    max-width:52ch;
-  }
-  .cta-row{
-    display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:14px 26px;
-    border-radius:8px;
-    font-weight:800;
-    font-size:15px;
-    border:2px solid transparent;
-    transition:transform .15s ease, background .2s ease;
-  }
-  .btn:active{ transform:scale(.97); }
-  .btn-solid{
-    background:var(--wood-deep);
-    color:#FBF7EE;
-  }
-  .btn-solid:hover{ background:var(--wood); }
-  .btn-outline{
-    border-color:var(--wood-deep);
-    color:var(--ink);
-  }
-  .btn-outline:hover{ background:rgba(156,107,62,.1); }
-  .btn svg{ width:19px; height:19px; }
-
-  .hero-art{
-    position:relative;
-  }
-  .hero-art img{
-    width:100%; height:auto; display:block;
-    border-radius:14px;
-    box-shadow:0 24px 60px -20px rgba(46,38,32,.35);
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Almarai', system-ui, -apple-system, sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    word-break: break-word;
   }
 
-  /* section headings */
-  .kicker{
-    display:inline-block;
-    font-family:'El Messiri',serif;
-    font-size:15px;
-    color:var(--wood-deep);
-    font-weight:600;
-    margin-bottom:10px;
-  }
-  .section h2{
-    font-size:clamp(26px,3.4vw,38px);
-    max-width:22ch;
-    line-height:1.35;
+  img, svg {
+    max-width: 100%;
+    height: auto;
   }
 
-  /* about section */
-  .about{
-    background:var(--bg-panel);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .about .wrap{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:52px;
-    align-items:center;
-  }
-  @media (max-width:900px){ .about .wrap{ grid-template-columns:1fr; } }
-  .about p{
-    color:var(--ink-soft);
-    font-size:16.5px;
-    max-width:56ch;
-    margin-top:18px;
-  }
-  .about-art img{
-    width:100%; height:auto; display:block;
-    border-radius:14px;
-    box-shadow:0 20px 50px -18px rgba(46,38,32,.32);
+  h1, h2, h3 {
+    font-family: 'El Messiri', 'Almarai', serif;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 700;
+    text-wrap: balance;
   }
 
-  /* services (zigzag, not cards) */
-  .services .head{ text-align:center; margin-bottom:56px; }
-  .services .head h2{ margin:0 auto; }
-  .svc-row{
-    display:flex;
-    align-items:center;
-    gap:56px;
-    padding:44px 0;
-    border-top:1px solid var(--line);
-  }
-  .svc-row:last-child{ border-bottom:1px solid var(--line); }
-  .svc-row:nth-child(even){ flex-direction:row-reverse; }
-  @media (max-width:820px){
-    .svc-row, .svc-row:nth-child(even){ flex-direction:column; gap:24px; text-align:center; }
-  }
-  .svc-icon{
-    flex:0 0 auto;
-    width:230px; height:170px;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 16px 36px -16px rgba(46,38,32,.3);
-  }
-  .svc-icon img{
-    width:100%; height:100%;
-    object-fit:cover; display:block;
-  }
-  @media (max-width:820px){ .svc-icon{ width:100%; max-width:320px; height:200px; } }
-  .svc-text{ flex:1; }
-  .svc-text h3{ font-size:22px; margin-bottom:12px; }
-  .svc-text ul{
-    margin:0; padding:0; list-style:none;
-    color:var(--ink-soft);
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px 22px;
-    font-size:15px;
-  }
-  @media (max-width:820px){ .svc-text ul{ grid-template-columns:1fr; } }
-  .svc-text ul li{ position:relative; padding-inline-start:16px; }
-  .svc-text ul li::before{
-    content:"";
-    position:absolute; right:0; top:9px;
-    width:6px; height:6px; border-radius:50%;
-    background:var(--wood);
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
-  /* trust band */
-  .trust{
-    background:var(--plum);
-    color:var(--cream-on-plum);
-  }
-  .trust .wrap{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:48px;
-    align-items:center;
-  }
-  @media (max-width:900px){ .trust .wrap{ grid-template-columns:1fr; } }
-  .trust h2{ color:var(--cream-on-plum); }
-  .trust p{ color:rgba(239,231,216,.8); margin-top:18px; font-size:16px; max-width:52ch; }
-  .stat-grid{ display:flex; gap:36px; margin-top:32px; flex-wrap:wrap; }
-  .stat b{
-    display:block; font-family:'El Messiri',serif;
-    font-size:36px; color:var(--wood-light);
-  }
-  .stat span{ font-size:13.5px; color:rgba(239,231,216,.75); }
-
-  /* testimonials */
-  .testi-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:48px;
-  }
-  @media (max-width:820px){ .testi-grid{ grid-template-columns:1fr; } }
-  .testi{
-    border-top:3px solid var(--wood);
-    padding-top:18px;
-  }
-  .stars{ color:var(--wood-deep); font-size:15px; letter-spacing:2px; margin-bottom:12px; }
-  .testi p{ color:var(--ink-soft); font-size:15.5px; }
-  .testi .who{ margin-top:16px; font-weight:800; font-size:14.5px; color:var(--ink); }
-
-  /* gallery */
-  .gallery-showcase{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:44px;
-    align-items:center;
-    margin-top:48px;
-  }
-  @media (max-width:900px){ .gallery-showcase{ grid-template-columns:1fr; } }
-  .gallery-showcase img{
-    width:100%; height:auto; display:block;
-    border-radius:14px;
-    box-shadow:0 20px 50px -18px rgba(46,38,32,.32);
-  }
-  .highlight-list{ list-style:none; margin:0; padding:0; }
-  .highlight-list li{
-    display:flex; align-items:flex-start; gap:14px;
-    padding:16px 0;
-    border-top:1px solid var(--line);
-    font-size:15.5px;
-    color:var(--ink-soft);
-  }
-  .highlight-list li:last-child{ border-bottom:1px solid var(--line); }
-  .highlight-list b{ color:var(--ink); display:block; margin-bottom:3px; font-size:16px; }
-  .highlight-num{
-    flex:0 0 auto;
-    width:34px; height:34px; border-radius:50%;
-    background:var(--wood-deep); color:#FBF7EE;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:14px;
+  .section { padding: 80px 0; }
+  @media (max-width: 768px) {
+    .section { padding: 48px 0; }
   }
 
-  /* final cta */
-  .final-cta{
-    text-align:center;
-    background:linear-gradient(180deg,var(--bg) 0%, var(--bg-panel) 100%);
+  /* Topbar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--plum);
+    color: var(--cream-on-plum);
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
-  .final-cta h2{ margin:0 auto 14px; }
-  .final-cta p{ color:var(--ink-soft); max-width:48ch; margin:0 auto 30px; }
-  .final-cta .cta-row{ justify-content:center; }
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .topbar .brand {
+    font-family: 'El Messiri', serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .topbar .contacts {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .topbar a.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.92;
+  }
+  .topbar a.contact-link:hover { opacity: 1; }
+  .topbar svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-  footer{
-    background:var(--plum);
-    color:rgba(239,231,216,.7);
-    font-size:14px;
-    padding:28px 0;
-    text-align:center;
-  }
-  footer strong{ color:var(--cream-on-plum); }
-
-  /* sticky mobile action bar */
-  .mobile-bar{
-    display:none;
-    position:fixed; bottom:0; inset-inline:0; z-index:60;
-    background:var(--plum);
-    padding:10px 14px;
-    gap:10px;
-  }
-  .mobile-bar a{
-    flex:1;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-    padding:12px; border-radius:8px; font-weight:800; font-size:14px;
-  }
-  .mobile-bar a.call{ background:var(--wood-deep); color:#FBF7EE; }
-  .mobile-bar a.wa{ background:#2E7D5B; color:#FBF7EE; }
-  @media (max-width:720px){
-    .mobile-bar{ display:flex; }
-    body{ padding-bottom:64px; }
+  @media (max-width: 600px) {
+    .topbar .contacts { display: none; }
+    .topbar .wrap { justify-content: center; }
   }
 
-  :focus-visible{ outline:2px solid var(--wood-deep); outline-offset:3px; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .btn{ transition:none; }
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 64px 0 40px;
+    overflow: hidden;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero .wrap {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .hero { padding-top: 36px; }
   }
 
-  /* floating whatsapp button */
-  .wa-float{
-    position:fixed;
-    bottom:26px; left:22px;
-    z-index:70;
-    width:60px; height:60px;
-    border-radius:50%;
-    background:#25D366;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 10px 26px -6px rgba(37,211,102,.6);
+  .eyebrow-wordgrain {
+    width: 56px;
+    height: 5px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--wood), var(--wood-light));
+    margin-bottom: 18px;
   }
-  .wa-float svg{ width:30px; height:30px; color:#fff; position:relative; z-index:2; }
-  .wa-float::before{
-    content:"";
-    position:absolute; inset:0;
-    border-radius:50%;
-    background:#25D366;
-    animation:wa-pulse 2.2s ease-out infinite;
+
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.3;
   }
-  @keyframes wa-pulse{
-    0%{ transform:scale(1); opacity:.55; }
-    100%{ transform:scale(1.9); opacity:0; }
+
+  .hero p.lead {
+    margin-top: 18px;
+    font-size: clamp(15.5px, 2.8vw, 17.5px);
+    color: var(--ink-soft);
+    line-height: 1.8;
   }
-  @media (max-width:720px){
-    .wa-float{ bottom:92px; left:16px; width:54px; height:54px; }
-    .wa-float svg{ width:27px; height:27px; }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
   }
-  @media (prefers-reduced-motion: reduce){
-    .wa-float::before{ animation:none; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, background 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn:active { transform: scale(0.97); }
+
+  .btn-solid {
+    background: var(--wood-deep);
+    color: #FBF7EE;
+  }
+  .btn-solid:hover { background: var(--wood); }
+
+  .btn-outline {
+    border-color: var(--wood-deep);
+    color: var(--ink);
+  }
+  .btn-outline:hover { background: rgba(156,107,62,0.1); }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  @media (max-width: 480px) {
+    .cta-row { flex-direction: column; width: 100%; }
+    .cta-row .btn { width: 100%; }
+  }
+
+  .hero-art img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px -15px rgba(46,38,32,0.3);
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Kicker & Common Headings */
+  .kicker {
+    display: inline-block;
+    font-family: 'El Messiri', serif;
+    font-size: 15px;
+    color: var(--wood-deep);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .section h2 {
+    font-size: clamp(24px, 4.5vw, 36px);
+    line-height: 1.35;
+  }
+
+  /* About */
+  .about {
+    background: var(--bg-panel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .about .wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-art { order: 2; }
+  }
+  .about p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .about-art img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px -15px rgba(46,38,32,0.25);
+    display: block;
+  }
+
+  /* Services */
+  .services .head { text-align: center; margin-bottom: 44px; }
+  .svc-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+  }
+  .svc-row:last-child { border-bottom: 1px solid var(--line); }
+  .svc-row:nth-child(even) { flex-direction: row-reverse; }
+
+  @media (max-width: 820px) {
+    .svc-row, .svc-row:nth-child(even) {
+      flex-direction: column;
+      gap: 20px;
+      text-align: right;
+    }
+  }
+
+  .svc-icon {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px -12px rgba(46,38,32,0.25);
+  }
+  .svc-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 820px) {
+    .svc-icon {
+      width: 100%;
+      height: 210px;
+    }
+  }
+
+  .svc-text { flex: 1; width: 100%; }
+  .svc-text h3 { font-size: 22px; margin-bottom: 12px; }
+  .svc-text ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--ink-soft);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px 16px;
+    font-size: 15px;
+  }
+  .svc-text ul li {
+    position: relative;
+    padding-inline-start: 16px;
+  }
+  .svc-text ul li::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--wood);
+  }
+
+  /* Trust */
+  .trust {
+    background: var(--plum);
+    color: var(--cream-on-plum);
+  }
+  .trust .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .trust .wrap { grid-template-columns: 1fr; }
+    .trust-graphic { display: none; }
+  }
+  .trust h2 { color: var(--cream-on-plum); }
+  .trust p { color: rgba(239,231,216,0.85); margin-top: 16px; font-size: 16px; }
+  .stat-grid {
+    display: flex;
+    gap: 28px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .stat b {
+    display: block;
+    font-family: 'El Messiri', serif;
+    font-size: 34px;
+    color: var(--wood-light);
+    line-height: 1.2;
+  }
+  .stat span { font-size: 13.5px; color: rgba(239,231,216,0.8); }
+
+  /* Testimonials */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @media (max-width: 820px) {
+    .testi-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+  .testi {
+    border-top: 3px solid var(--wood);
+    padding-top: 16px;
+  }
+  .stars { color: var(--wood-deep); font-size: 15px; letter-spacing: 2px; margin-bottom: 8px; }
+  .testi p { color: var(--ink-soft); font-size: 15px; margin: 0; }
+  .testi .who { margin-top: 12px; font-weight: 800; font-size: 14.5px; }
+
+  /* Gallery */
+  .gallery-showcase {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+  }
+  @media (max-width: 900px) {
+    .gallery-showcase { grid-template-columns: 1fr; }
+  }
+  .gallery-showcase img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px -15px rgba(46,38,32,0.25);
+    display: block;
+  }
+  .highlight-list { list-style: none; margin: 0; padding: 0; }
+  .highlight-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .highlight-list li:last-child { border-bottom: 1px solid var(--line); }
+  .highlight-list b { color: var(--ink); display: block; margin-bottom: 2px; font-size: 15.5px; }
+  .highlight-num {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--wood-deep);
+    color: #FBF7EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13.5px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-panel) 100%);
+  }
+  .final-cta h2 { margin: 0 auto 12px; }
+  .final-cta p { color: var(--ink-soft); max-width: 48ch; margin: 0 auto 28px; }
+  .final-cta .cta-row { justify-content: center; }
+
+  footer {
+    background: var(--plum);
+    color: rgba(239,231,216,0.7);
+    font-size: 13.5px;
+    padding: 28px 0;
+    text-align: center;
+  }
+  footer strong { color: var(--cream-on-plum); }
+
+  /* Sticky Mobile Bar */
+  .mobile-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: var(--plum);
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.2);
+  }
+  .mobile-bar a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .mobile-bar a.call { background: var(--wood-deep); color: #FBF7EE; }
+  .mobile-bar a.wa { background: #2E7D5B; color: #FBF7EE; }
+
+  @media (max-width: 768px) {
+    .mobile-bar { display: flex; }
+    body { padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px)); }
+  }
+
+  /* Floating WhatsApp */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    z-index: 70;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px -4px rgba(37,211,102,0.6);
+  }
+  .wa-float svg { width: 28px; height: 28px; color: #fff; position: relative; z-index: 2; }
+  .wa-float::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    animation: wa-pulse 2.2s ease-out infinite;
+  }
+
+  @keyframes wa-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .wa-float {
+      bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+      left: 14px;
+      width: 50px;
+      height: 50px;
+    }
+    .wa-float svg { width: 25px; height: 25px; }
+  }
+
+  :focus-visible { outline: 2px solid var(--wood-deep); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+    .wa-float::before { animation: none; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="wrap">
     <div class="brand">فريق صيانة وتركيب غرف النوم</div>
     <div class="contacts">
@@ -404,181 +543,183 @@
       </a>
     </div>
   </div>
-</div>
+</header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <div class="eyebrow-wordgrain"></div>
-      <h1>فنيون متخصصون في صيانة وتركيب غرف النوم</h1>
-      <p class="lead">
-        نختار الخامات بعناية، وننفّذ كل تفصيلة بدقة: من دولاب يفتح بسلاسة، إلى سرير ثابت لا يهتز،
-        إلى تسريحة ودرج يعملان تمامًا كأول يوم. غرفة نومك هي ملاذك للراحة، ونحن نحرص أن تبقى كذلك.
-      </p>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow-wordgrain"></div>
+        <h1>فنيون متخصصون في صيانة وتركيب غرف النوم</h1>
+        <p class="lead">
+          نختار الخامات بعناية، وننفّذ كل تفصيلة بدقة: من دولاب يفتح بسلاسة، إلى سرير ثابت لا يهتز،
+          إلى تسريحة ودرج يعملان تمامًا كأول يوم. غرفة نومك هي ملاذك للراحة، ونحن نحرص أن تبقى كذلك.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="tel:0500000000">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.48a2 2 0 0 1 2.11-.45c.82.35 1.7.6 2.6.72A2 2 0 0 1 22 16.92z"/></svg>
+            تواصل الآن
+          </a>
+          <a class="btn btn-outline" href="https://wa.me/966500000000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.93L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.79 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.4-.71-2.87-1.18-4.72-4.08-4.86-4.27-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.58-.35.77-.35.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.3.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+            راسلنا واتساب
+          </a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="hero.jpg" alt="غرفة نوم فاخرة بدولاب ملابس مفتوح مصمم حسب الطلب" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="about section">
+    <div class="wrap">
+      <div class="about-art">
+        <img src="about.jpg" alt="فني الفريق أثناء العمل في غرف نوم مختلفة" loading="lazy" decoding="async">
+      </div>
+      <div>
+        <span class="kicker">من نحن</span>
+        <h2>فريق متخصص في صيانة وتركيب غرف النوم بخبرة طويلة</h2>
+        <p>
+          غرفة النوم هي أكثر ركن في المنزل حاجةً للراحة والهدوء، ولهذا نتعامل مع كل قطعة فيها بعناية:
+          دولاب، سرير، تسريحة، أو خزانة جانبية. فريقنا يجمع بين الخبرة الطويلة والمواد عالية الجودة،
+          نختار الخامات بعناية وننفّذ كل عملية صيانة أو تركيب بدقة لنعيد لأثاث غرفتك متانته ومظهره الأول.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">كيف نستطيع خدمتك؟</span>
+        <h2>خدمتان أساسيتان، فريق واحد يهتم بكل تفاصيل غرفة نومك</h2>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc-icon">
+          <img src="service-maintenance.jpg" alt="فني يستبدل مفصلات دولاب غرفة نوم" loading="lazy" decoding="async">
+        </div>
+        <div class="svc-text">
+          <h3>صيانة غرف نوم</h3>
+          <ul>
+            <li>صيانة عامة لأثاث غرف النوم</li>
+            <li>تصليح الأدراج والأبواب المتعطلة</li>
+            <li>تغيير المفصلات والسحّابات التالفة</li>
+            <li>معالجة الخدوش والكسور</li>
+            <li>تجديد الطلاء والتلميع</li>
+            <li>تثبيت الدواليب والأسرّة المهتزة</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-row">
+        <div class="svc-icon">
+          <img src="service-install.jpg" alt="فني يركب دولاب ملابس أبيض بطريقة احترافية" loading="lazy" decoding="async">
+        </div>
+        <div class="svc-text">
+          <h3>تركيب ونقل غرف نوم</h3>
+          <ul>
+            <li>فك وتركيب غرف النوم باحترافية</li>
+            <li>نقل الأثاث داخل مدينة الرياض</li>
+            <li>تركيب الدواليب والأسرّة الجديدة</li>
+            <li>تركيب الإضاءة الداخلية للدولاب</li>
+            <li>بدون خدوش أو أضرار على الأثاث والجدران</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust section">
+    <div class="wrap">
+      <div>
+        <span class="kicker" style="color:var(--wood-light)">لماذا نحن؟</span>
+        <h2>لأن غرفة نومك تستحق الأفضل</h2>
+        <p>
+          نلتزم بالمواعيد، ونستخدم خامات أصلية، ونضمن جودة التنفيذ في كل تفصيلة صغيرة —
+          من أول اتصال وحتى تسليم العمل وتشغيله أمامك.
+        </p>
+        <div class="stat-grid">
+          <div class="stat"><b>+500</b><span>عميل راضٍ في الرياض</span></div>
+          <div class="stat"><b>10+</b><span>سنوات خبرة</span></div>
+          <div class="stat"><b>24س</b><span>سرعة استجابة للطلبات</span></div>
+        </div>
+      </div>
+      <div class="trust-graphic" aria-hidden="true">
+        <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="var(--wood-light)" stroke-width="3" fill="none" opacity="0.9">
+            <rect x="40" y="40" width="220" height="130" rx="10"/>
+            <line x1="40" y1="80" x2="260" y2="80"/>
+            <circle cx="70" cy="60" r="6" fill="var(--wood-light)" stroke="none"/>
+            <circle cx="95" cy="60" r="6" fill="var(--plum-soft)" stroke="none"/>
+            <path d="M75 130 l25 25 55-55" stroke-width="6"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">شهادات التقدير</span>
+      <h2>عملاؤنا يتحدثون عن تجربتهم معنا</h2>
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>خدمة راقية واحترافية، أصلحوا دولاب غرفة النوم بالكامل وصار يفتح بسلاسة تامة. تعامل محترم ودقة في المواعيد.</p>
+          <div class="who">أم فيصل</div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★☆</div>
+          <p>الله يعطيهم العافية، شغلهم مرتب ونظيف، وساعدوني في اختيار خامات مناسبة لغرفة نوم الأطفال.</p>
+          <div class="who">أبو سعود</div>
+        </div>
+        <div class="testi">
+          <div class="stars">★★★★★</div>
+          <p>تعاملت معهم في نقل وتركيب غرفة نوم كاملة، العمال دقيقون ونظيفون ولم يحدث أي خدش. أنصح بالتعامل معهم.</p>
+          <div class="who">محمد العنزي</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <span class="kicker">أعمالنا</span>
+      <h2>نماذج من صيانة وتركيب غرف النوم</h2>
+      <div class="gallery-showcase">
+        <img src="gallery.jpg" alt="غرفة نوم بتصميم دولاب مفتوح من تنفيذ الفريق" loading="lazy" decoding="async">
+        <ul class="highlight-list">
+          <li>
+            <span class="highlight-num">١</span>
+            <div><b>خامات أصلية</b>نستخدم خشبًا ومفصلات وسحّابات من مصادر موثوقة تدوم لسنوات.</div>
+          </li>
+          <li>
+            <span class="highlight-num">٢</span>
+            <div><b>تنفيذ دقيق</b>كل قياس وتركيب يتم بعناية لضمان توافق تام مع مساحة الغرفة.</div>
+          </li>
+          <li>
+            <span class="highlight-num">٣</span>
+            <div><b>نظافة أثناء العمل</b>نحافظ على نظافة الغرفة والجدران طوال فترة التنفيذ.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="wrap">
+      <span class="kicker">نحن سعداء بخدمتكم اليوم</span>
+      <h2>جاهزون لصيانة أو تركيب غرفة نومك بأعلى جودة</h2>
+      <p>اتصل بنا الآن أو راسلنا على واتساب، وسنقوم بمعاينة الطلب وتحديد موعد يناسبك في أسرع وقت.</p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="tel:0500000000">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.48a2 2 0 0 1 2.11-.45c.82.35 1.7.6 2.6.72A2 2 0 0 1 22 16.92z"/></svg>
-          تواصل الآن
-        </a>
-        <a class="btn btn-outline" href="https://wa.me/966500000000" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.93L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.79 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.4-.71-2.87-1.18-4.72-4.08-4.86-4.27-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.58-.35.77-.35.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.3.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
-          راسلنا واتساب
-        </a>
+        <a class="btn btn-solid" href="tel:0500000000">تواصل الآن: 0500000000</a>
+        <a class="btn btn-outline" href="https://wa.me/966500000000" target="_blank" rel="noopener">راسلنا بالواتساب الآن</a>
       </div>
     </div>
-    <div class="hero-art">
-      <img src="hero.jpg" alt="غرفة نوم فاخرة بدولاب ملابس مفتوح مصمم حسب الطلب">
-    </div>
-  </div>
-</section>
-
-<section class="about section">
-  <div class="wrap">
-    <div class="about-art">
-      <img src="about.jpg" alt="فني الفريق أثناء العمل في غرف نوم مختلفة">
-    </div>
-    <div>
-      <span class="kicker">من نحن</span>
-      <h2>فريق متخصص في صيانة وتركيب غرف النوم بخبرة طويلة</h2>
-      <p>
-        غرفة النوم هي أكثر ركن في المنزل حاجةً للراحة والهدوء، ولهذا نتعامل مع كل قطعة فيها بعناية:
-        دولاب، سرير، تسريحة، أو خزانة جانبية. فريقنا يجمع بين الخبرة الطويلة والمواد عالية الجودة،
-        نختار الخامات بعناية وننفّذ كل عملية صيانة أو تركيب بدقة لنعيد لأثاث غرفتك متانته ومظهره الأول.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="services section">
-  <div class="wrap">
-    <div class="head">
-      <span class="kicker">كيف نستطيع خدمتك؟</span>
-      <h2>خدمتان أساسيتان، فريق واحد يهتم بكل تفاصيل غرفة نومك</h2>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-icon">
-        <img src="service-maintenance.jpg" alt="فني يستبدل مفصلات دولاب غرفة نوم">
-      </div>
-      <div class="svc-text">
-        <h3>صيانة غرف نوم</h3>
-        <ul>
-          <li>صيانة عامة لأثاث غرف النوم</li>
-          <li>تصليح الأدراج والأبواب المتعطلة</li>
-          <li>تغيير المفصلات والسحّابات التالفة</li>
-          <li>معالجة الخدوش والكسور</li>
-          <li>تجديد الطلاء والتلميع</li>
-          <li>تثبيت الدواليب والأسرّة المهتزة</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-icon">
-        <img src="service-install.jpg" alt="فني يركب دولاب ملابس أبيض بطريقة احترافية">
-      </div>
-      <div class="svc-text">
-        <h3>تركيب ونقل غرف نوم</h3>
-        <ul>
-          <li>فك وتركيب غرف النوم باحترافية</li>
-          <li>نقل الأثاث داخل مدينة الرياض</li>
-          <li>تركيب الدواليب والأسرّة الجديدة</li>
-          <li>تركيب الإضاءة الداخلية للدولاب</li>
-          <li>بدون خدوش أو أضرار على الأثاث والجدران</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="trust section">
-  <div class="wrap">
-    <div>
-      <span class="kicker" style="color:var(--wood-light)">لماذا نحن؟</span>
-      <h2>لأن غرفة نومك تستحق الأفضل</h2>
-      <p>
-        نلتزم بالمواعيد، ونستخدم خامات أصلية، ونضمن جودة التنفيذ في كل تفصيلة صغيرة —
-        من أول اتصال وحتى تسليم العمل وتشغيله أمامك.
-      </p>
-      <div class="stat-grid">
-        <div class="stat"><b>+500</b><span>عميل راضٍ في الرياض</span></div>
-        <div class="stat"><b>10+</b><span>سنوات خبرة</span></div>
-        <div class="stat"><b>24س</b><span>سرعة استجابة للطلبات</span></div>
-      </div>
-    </div>
-    <div aria-hidden="true">
-      <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="var(--wood-light)" stroke-width="3" fill="none" opacity="0.9">
-          <rect x="40" y="40" width="220" height="130" rx="10"/>
-          <line x1="40" y1="80" x2="260" y2="80"/>
-          <circle cx="70" cy="60" r="6" fill="var(--wood-light)" stroke="none"/>
-          <circle cx="95" cy="60" r="6" fill="var(--plum-soft)" stroke="none"/>
-          <path d="M75 130 l25 25 55-55" stroke-width="6"/>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <span class="kicker">شهادات التقدير</span>
-    <h2>عملاؤنا يتحدثون عن تجربتهم معنا</h2>
-    <div class="testi-grid">
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>خدمة راقية واحترافية، أصلحوا دولاب غرفة النوم بالكامل وصار يفتح بسلاسة تامة. تعامل محترم ودقة في المواعيد.</p>
-        <div class="who">أم فيصل</div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★☆</div>
-        <p>الله يعطيهم العافية، شغلهم مرتب ونظيف، وساعدوني في اختيار خامات مناسبة لغرفة نوم الأطفال.</p>
-        <div class="who">أبو سعود</div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>تعاملت معهم في نقل وتركيب غرفة نوم كاملة، العمال دقيقون ونظيفون ولم يحدث أي خدش. أنصح بالتعامل معهم.</p>
-        <div class="who">محمد العنزي</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <span class="kicker">أعمالنا</span>
-    <h2>نماذج من صيانة وتركيب غرف النوم</h2>
-    <div class="gallery-showcase">
-      <img src="gallery.jpg" alt="غرفة نوم بتصميم دولاب مفتوح من تنفيذ الفريق">
-      <ul class="highlight-list">
-        <li>
-          <span class="highlight-num">١</span>
-          <div><b>خامات أصلية</b>نستخدم خشبًا ومفصلات وسحّابات من مصادر موثوقة تدوم لسنوات.</div>
-        </li>
-        <li>
-          <span class="highlight-num">٢</span>
-          <div><b>تنفيذ دقيق</b>كل قياس وتركيب يتم بعناية لضمان توافق تام مع مساحة الغرفة.</div>
-        </li>
-        <li>
-          <span class="highlight-num">٣</span>
-          <div><b>نظافة أثناء العمل</b>نحافظ على نظافة الغرفة والجدران طوال فترة التنفيذ.</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section final-cta">
-  <div class="wrap">
-    <span class="kicker">نحن سعداء بخدمتكم اليوم</span>
-    <h2>جاهزون لصيانة أو تركيب غرفة نومك بأعلى جودة</h2>
-    <p>اتصل بنا الآن أو راسلنا على واتساب، وسنقوم بمعاينة الطلب وتحديد موعد يناسبك في أسرع وقت.</p>
-    <div class="cta-row">
-      <a class="btn btn-solid" href="tel:0500000000">تواصل الآن: 0500000000</a>
-      <a class="btn btn-outline" href="https://wa.me/966500000000" target="_blank" rel="noopener">راسلنا بالواتساب الآن</a>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -593,10 +734,11 @@
     اتصل الآن
   </a>
   <a class="wa" href="https://wa.me/966500000000" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.93L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2z"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.93L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.79 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.4-.71-2.87-1.18-4.72-4.08-4.86-4.27-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.58-.35.77-.35.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.3.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
     واتساب
   </a>
 </div>
+
 <a class="wa-float" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.93L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.79 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.28-3.4-.71-2.87-1.18-4.72-4.08-4.86-4.27-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.58-.35.77-.35.19 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.1.19-.15.31-.3.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
 </a>
